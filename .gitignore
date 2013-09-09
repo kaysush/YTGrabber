@@ -1,0 +1,9 @@
+# Ignoring the jars,wars and ears
+
+*.jar
+*.war
+*.ear
+
+# Ignoring the target and resource directories
+target/
+src/main/resources
