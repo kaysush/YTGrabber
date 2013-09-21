@@ -1,13 +1,16 @@
 package com.kaysush.ytgrabber.yt;
 
 import java.util.ArrayList;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Sushil Kumar <kaysush@outlook.com>
  */
+@XmlRootElement(name = "links")
 public class DownloadResource {
-
+    @XmlElement(name = "link")
     private ArrayList<DownloadLink> links;
     
     public DownloadResource(){
