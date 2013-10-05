@@ -24,7 +24,7 @@ public class MainApp {
     
     @GET
     @Path("/app")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
     public DownloadResource app(){
         return YTWrapper.extractLinks("8V8yLwjpQEU");
     }
