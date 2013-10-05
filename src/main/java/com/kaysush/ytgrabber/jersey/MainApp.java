@@ -3,15 +3,10 @@ package com.kaysush.ytgrabber.jersey;
 
 import com.kaysush.ytgrabber.yt.DownloadResource;
 import com.kaysush.ytgrabber.yt.YTWrapper;
-import com.sun.jersey.api.json.JSONConfiguration;
-import com.sun.jersey.api.json.JSONJAXBContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.ext.ContextResolver;
-import javax.ws.rs.ext.Provider;
-import javax.xml.bind.JAXBContext;
 
 /**
  * This class is the main interface for Jersey REST service.
