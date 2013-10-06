@@ -18,13 +18,13 @@ import java.util.logging.Logger;
  */
 public class YTWrapper {
 
-    public static DownloadResource getLinks(String vid) {
-        return extractLinks(vid);
+    public static DownloadResource getLinks(String vid,String prefix) {
+        return extractLinks(vid,prefix);
     }
 
-    public static Map<String, String> getQueryMap(String query) {
+    private static Map<String, String> getQueryMap(String query) {
         String[] params = query.split("&");
-        Map<String, String> map = new HashMap<String, String>();
+        Map<String, String> map = new HashMap<>();
         for (String param : params) {
             String[] values = param.split("=");
 
@@ -85,7 +85,7 @@ public class YTWrapper {
      * containing links and {@link com.kaysush.ytgrabber.yt.VideoType VideoType}
      * information.
      */
-    public static DownloadResource extractLinks(String vid) {
+    private static DownloadResource extractLinks(String vid, String prefix) {
         InputStream inStream = null;
          BufferedReader in = null;
         DownloadResource links = new DownloadResource();
@@ -104,7 +104,6 @@ public class YTWrapper {
             String title = parameters.get("title");
             title = URLDecoder.decode(title, "UTF-8");
             title = title.replaceAll("[^a-zA-Z0-9\\s]+", "");
-            System.out.println(title);
             String url_encoded_fmt_stream_map = parameters.get("url_encoded_fmt_stream_map");
             url_encoded_fmt_stream_map = URLDecoder.decode(url_encoded_fmt_stream_map, "UTF-8");
             String[] urls = url_encoded_fmt_stream_map.split(",");
@@ -125,7 +124,7 @@ public class YTWrapper {
                 String ul = urlParameters.get("url") + "&signature=" + urlParameters.get("sig");
                 ul = URLDecoder.decode(ul, "UTF-8");
                 ul = ul.replace("&", "!");
-                ul = "http://localhost:8080/YTGrabber/YTDownload?url=" + ul + "&title=" + URLEncoder.encode(fileName, "UTF-8");
+                ul = prefix+"/YTGrabber/YTDownload?url=" + ul + "&title=" + URLEncoder.encode(fileName, "UTF-8");
                 links.addLink(ul, getQuality(quality), getExtension(type));
 
             }
@@ -141,9 +140,5 @@ public class YTWrapper {
             }
         }
         return links;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(YTWrapper.getLinks("xlUFkMKSB3Y"));
     }
 }

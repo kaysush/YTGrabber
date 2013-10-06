@@ -12,6 +12,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -27,22 +28,32 @@ public class TypeFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         String type = request.getParameter("type");
+        HttpServletResponse res = (HttpServletResponse)response;
         if(type == null)
-            type = "xml";
+            type = "json";
             switch(type){
-                case "json" : 
-                    request.setAttribute("accept", "application/json");
+                case "json" :
+                    System.out.println("--------------------------");
+                    System.out.println("Setting JSON");
+                    System.out.println("--------------------------");
+                    res.addHeader("Accept", "application/json");
                 break;
                 
                 case "xml" : 
-                    request.setAttribute("accept", "application/xml");
+                    System.out.println("--------------------------");
+                    System.out.println("Setting XML");
+                    System.out.println("--------------------------");
+                    res.addHeader("Accept", "application/xml");
                 break;
                 
                 default:
-                    request.setAttribute("accept", "application/xml");
+                    System.out.println("--------------------------");
+                    System.out.println("Setting DEFAULT");
+                    System.out.println("--------------------------");
+                    res.addHeader("Accept", "application/json");
             }
         
-            chain.doFilter(request, response);
+            chain.doFilter(request, res);
     }
 
     @Override
