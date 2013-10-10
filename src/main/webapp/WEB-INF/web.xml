@@ -8,6 +8,18 @@
         <filter-name>TypeFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping-->
+    <filter>
+        <filter-name>MashapeAuthenticationFilter</filter-name>
+        <filter-class>com.kaysush.ytgrabber.filters.MashapeAuthenticationFilter</filter-class>
+        <init-param>
+            <param-name>proxy-header</param-name>
+            <param-value>OVPDgHMpovRxoeV3bcCv5ekN8MgAgV</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>MashapeAuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>jersey-servlet</servlet-name>
         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
