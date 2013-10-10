@@ -101,6 +101,10 @@ public class YTWrapper {
             
             
             Map<String, String> parameters = getQueryMap(response);
+            if(parameters.containsKey("reason")){
+                links.setError(new ProcessingError(Integer.parseInt(parameters.get("errorcode")) , parameters.get("reason")));
+                return links;
+            }
             String title = parameters.get("title");
             title = URLDecoder.decode(title, "UTF-8");
             title = title.replaceAll("[^a-zA-Z0-9\\s]+", "");

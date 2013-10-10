@@ -12,6 +12,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class DownloadResource {
     @XmlElement(name = "link")
     private ArrayList<DownloadLink> links;
+    @XmlElement(name = "error")
+    private ProcessingError error;
+
+    public ProcessingError getError() {
+        return error;
+    }
+
+    public void setError(ProcessingError error) {
+        this.error = error;
+    }
+    
     
     public DownloadResource(){
         this.links = new ArrayList<DownloadLink>();

@@ -29,7 +29,7 @@ public class MainApp {
     
     @GET
     @Path("/get/{vid}")
-    @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+    @Produces(MediaType.APPLICATION_JSON)
     public DownloadResource app(@PathParam("vid") String vid){
         String prefix = context.getInitParameter("urlprefix");
         return YTWrapper.getLinks(vid,prefix);
