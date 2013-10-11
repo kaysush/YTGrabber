@@ -18,7 +18,7 @@
     </filter>
     <filter-mapping>
         <filter-name>MashapeAuthenticationFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/app/get/*</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>jersey-servlet</servlet-name>
