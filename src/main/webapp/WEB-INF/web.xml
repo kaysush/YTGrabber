@@ -54,4 +54,7 @@
         <param-name>urlprefix</param-name>
         <param-value>http://ytgrabber.herokuapp.com</param-value>
     </context-param>
+    <welcome-file-list>
+        <welcome-file>/index,html</welcome-file>
+    </welcome-file-list>
 </web-app>
