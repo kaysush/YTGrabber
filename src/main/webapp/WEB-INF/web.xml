@@ -52,6 +52,6 @@
     </session-config>
     <context-param>
         <param-name>urlprefix</param-name>
-        <param-value>http://projects-sushilkumar.rhcloud.com</param-value>
+        <param-value>http://ytgrabber.herokuapp.com</param-value>
     </context-param>
 </web-app>

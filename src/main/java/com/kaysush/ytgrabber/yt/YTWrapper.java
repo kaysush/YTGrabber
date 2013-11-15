@@ -128,7 +128,7 @@ public class YTWrapper {
                 String ul = urlParameters.get("url") + "&signature=" + urlParameters.get("sig");
                 ul = URLDecoder.decode(ul, "UTF-8");
                 ul = ul.replace("&", "!");
-                ul = prefix+"/YTGrabber/YTDownload?url=" + ul + "&title=" + URLEncoder.encode(fileName, "UTF-8");
+                ul = prefix+"/YTDownload?url=" + ul + "&title=" + URLEncoder.encode(fileName, "UTF-8");
                 links.addLink(ul, getQuality(quality), getExtension(type));
 
             }
