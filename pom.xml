@@ -42,9 +42,9 @@
             <artifactId>genson</artifactId>
             <version>0.98</version>
         </dependency>
-            
-            
-            
+        
+        
+        
     </dependencies>
     <repositories>
         <repository>
