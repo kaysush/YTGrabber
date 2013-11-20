@@ -106,11 +106,11 @@ public class YTWrapper {
                 return links;
             }
             String title = parameters.get("title");
-            String thubnailUrl = parameters.get("thumbnail_url");
-            links.setTitle(title);
-            links.setThumbnailUrl(thubnailUrl);
+            String thubnailUrl = parameters.get("thumbnail_url"); 
+            links.setThumbnailUrl(URLDecoder.decode(thubnailUrl,"UTF-8"));
             title = URLDecoder.decode(title, "UTF-8");
             title = title.replaceAll("[^a-zA-Z0-9\\s]+", "");
+            links.setTitle(title);
             String url_encoded_fmt_stream_map = parameters.get("url_encoded_fmt_stream_map");
             url_encoded_fmt_stream_map = URLDecoder.decode(url_encoded_fmt_stream_map, "UTF-8");
             String[] urls = url_encoded_fmt_stream_map.split(",");

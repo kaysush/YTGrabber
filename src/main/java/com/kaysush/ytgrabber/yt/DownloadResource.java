@@ -14,8 +14,7 @@ public class DownloadResource {
     private ArrayList<DownloadLink> links;
     @XmlElement(name = "error")
     private ProcessingError error;
-    @XmlElement(name = "thumbnail_url")
-    private String thumbnailUrl;
+    private String thumbnail_url;
     
     private String title;
 
@@ -44,7 +43,7 @@ public class DownloadResource {
      * @return the value of thumbnailUrl
      */
     public String getThumbnailUrl() {
-        return thumbnailUrl;
+        return thumbnail_url;
     }
 
     /**
@@ -53,7 +52,7 @@ public class DownloadResource {
      * @param thumbnailUrl new value of thumbnailUrl
      */
     public void setThumbnailUrl(String thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+        this.thumbnail_url = thumbnailUrl;
     }
 
 
