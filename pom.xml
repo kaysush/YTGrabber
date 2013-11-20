@@ -42,10 +42,14 @@
             <artifactId>genson</artifactId>
             <version>0.98</version>
         </dependency>
-        
-        
-        
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-proxy</artifactId>
+            <version>9.1.0.M0</version>
+        </dependency>
+            
     </dependencies>
+    
     <repositories>
         <repository>
             <id>codehaus</id>
