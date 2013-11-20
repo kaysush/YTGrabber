@@ -102,7 +102,7 @@ public class YTWrapper {
             
             Map<String, String> parameters = getQueryMap(response);
             if(parameters.containsKey("reason")){
-                links.setError(new ProcessingError(Integer.parseInt(parameters.get("errorcode")) , parameters.get("reason")));
+                links.setError(new ProcessingError(Integer.parseInt(parameters.get("errorcode")) , URLDecoder.decode(parameters.get("reason"),"UTF-8")));
                 return links;
             }
             String title = parameters.get("title");
