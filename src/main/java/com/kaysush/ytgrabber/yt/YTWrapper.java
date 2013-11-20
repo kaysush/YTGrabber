@@ -106,6 +106,9 @@ public class YTWrapper {
                 return links;
             }
             String title = parameters.get("title");
+            String thubnailUrl = parameters.get("thumbnail_url");
+            links.setTitle(title);
+            links.setThumbnailUrl(thubnailUrl);
             title = URLDecoder.decode(title, "UTF-8");
             title = title.replaceAll("[^a-zA-Z0-9\\s]+", "");
             String url_encoded_fmt_stream_map = parameters.get("url_encoded_fmt_stream_map");
