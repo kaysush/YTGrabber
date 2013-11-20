@@ -10,13 +10,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement(name = "links")
 public class DownloadResource {
+    private String thumbnail_url;
+    private String title;
     @XmlElement(name = "link")
     private ArrayList<DownloadLink> links;
     @XmlElement(name = "error")
     private ProcessingError error;
-    private String thumbnail_url;
-    
-    private String title;
 
     /**
      * Get the value of title
